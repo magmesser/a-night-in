@@ -20,8 +20,8 @@ Goals for Wed 11/9:
 
 Wireframe Screenshots
 
-![Wireframe Screenshot 1](./Assets/Photos/image.png)
+![Wireframe Screenshot 1](./Assets/Photos/image1.png)
 
-![Wireframe Screenshot 1](./Assets/Photos/image%20(1).png)
+![Wireframe Screenshot 1](./Assets/Photos/image2.png)
 
-![Wireframe Screenshot 1](./Assets/Photos/image%20(2).png)
+![Wireframe Screenshot 1](./Assets/Photos/image3.png)
