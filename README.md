@@ -5,9 +5,8 @@
 As a user
 I want to find options for food & entertainment for a night in
 So I can have more options of what to do and eat. 
-- Wireframe or sketch of the design- in progress 
-APIS to be used - Spoonacluar & OMDB https://rapidapi.com/spoonacular/api/recipe-food-nutrition/?utm_source=RapidAPI.com%2Fguides&utm_medium=DevRel&utm_campaign=DevRel 
-https://www.omdbapi.com/ 
+- Wireframe or sketch of the design (see below)
+- APIS to be used - Edamam https://www.edamam.com/ & IMDB-API https://imdb-api.com/api
 - Rough breakdown of tasks 
 Goals for Wed 11/9:
 - research both of the apis
