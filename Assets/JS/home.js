@@ -3,9 +3,9 @@ var submitBtn = $("#submit-btn");
 
 function formSubmit(event) {
     event.preventDefault();
-    var queryURL = "./results.html?q=" + recipeInput.val();
+    var queryUrl = "./results.html?q=" + recipeInput.val();
 
-    location.assign(queryURL);
+    location.assign(queryUrl);
 }
 
 submitBtn.click(formSubmit);
