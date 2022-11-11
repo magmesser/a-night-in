@@ -14,7 +14,6 @@ function grabParams() {
 var getMovies = function(movieName) {
     var movieApiUrl = "https://imdb-api.com/en/API/SearchMovie/" + movieApiKey + "/" + movieName;
 
-
     fetch(movieApiUrl)
       .then(function(response) {
         if (response.ok) {
@@ -39,7 +38,6 @@ var getMovies = function(movieName) {
           alert("Unable to reach Movie Database");
       })
   };
-
 
 function recipeAPI(recipe) {
     var recipeQueryUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipe + "&app_id=ffb9b7d6&app_key=177ebaaec33bbf5decf819cd890a664a"
