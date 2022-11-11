@@ -1,22 +1,15 @@
 var movieApiKey = "k_ctt698mf";
-var recipeImg = $("#recipe-img")
+var recipeImg = $("#recipe-img");
+var recipeUrl = $("#recipe-url");
 var ingredientsList = $("#ingredients-list")
 var movieContainer = $("#movieContainer");
 
 function grabParams() {
   var apiParamsArr = document.location.search.split("&");
-  console.log(apiParamsArr);
   var recipe = apiParamsArr[0].split("=").pop()
   var movie = apiParamsArr[1].split("=").pop()
   recipeAPI(recipe);
   getMovies(movie);
-}
-
-function grabParams() {
-  var apiParamsArr = document.location.search.split("?");
-  console.log(apiParamsArr);
-  var recipe = apiParamsArr[1].split("=").pop()
-  recipeAPI(recipe);
 }
 
 var getMovies = function(movieName) {
@@ -62,6 +55,8 @@ function updateRecipeCard(values) {
     var randomRecipe = values.hits[Math.floor(Math.random() * values.hits.length)].recipe;
     var ingredients = randomRecipe.ingredientLines
     recipeImg.attr("src", randomRecipe.image)
+    recipeUrl.attr("href", randomRecipe.url);
+    console.log(randomRecipe);
     for (let i = 0; i < ingredients.length; i++) {
         var listIngredient = $("<div></div>").html(ingredients[i]);
         ingredientsList.append(listIngredient);
