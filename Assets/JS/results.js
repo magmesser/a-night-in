@@ -12,33 +12,37 @@ function grabParams() {
   getMovies(movie);
 }
 
-var getMovies = function(movieName) {
-    var movieApiUrl = "https://imdb-api.com/en/API/SearchMovie/" + movieApiKey + "/" + movieName + "&count=5";
+var getMovies = function (movieName) {
+  var movieApiUrl =
+    "https://imdb-api.com/en/API/SearchMovie/" +
+    movieApiKey +
+    "/" +
+    movieName +
+    "&count=5";
 
-    fetch(movieApiUrl)
-      .then(function(response) {
-        if (response.ok) {
-          return response.json()
-        } else {
-          alert("Error: " + response.statusText);
-        } 
-      })
-      .then(function(data){
-        console.log(data);
-        displayMovieSearch(data);
-        
-        let movieData = {
-            title: data.results[0].title,
-            poster: data.results[0].image,
-            descrip: data.results[0].description,
-        };
-        console.log(movieData);
-        
-      })
-      .catch(function(error){
-          alert("Unable to reach Movie Database");
-      })
-  };
+  fetch(movieApiUrl)
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        alert("Error: " + response.statusText);
+      }
+    })
+    .then(function (data) {
+      console.log(data);
+      displayMovieSearch(data);
+
+      let movieData = {
+        title: data.results[i].title,
+        poster: data.results[i].image,
+        descrip: data.results[i].description,
+      };
+      console.log(movieData);
+    })
+    .catch(function (error) {
+      alert("Unable to reach Movie Database");
+    });
+};
 
 function recipeAPI(recipe) {
     var recipeQueryUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipe + "&app_id=ffb9b7d6&app_key=177ebaaec33bbf5decf819cd890a664a"
@@ -63,12 +67,14 @@ function updateRecipeCard(values) {
     }
 }
 
-function displayMovieSearch(results) {
-  
-  for (var i = 0; results.length; i++){
-    var movieTitleEl = $('<h1></h1>').text(results[i].title);
+function displayMovieSearch(movieData) {
+  for (var i = 0; movieData.results.length; i++) {
+    var movieTitleEl = $("<h1></h1>").text(movieData.results[i].title);
     movieContainer.append(movieTitleEl);
+
+    var movieImgEl = $("<img>").attr("src", movieData.results[i].img);
+    movieContainer.append(movieImgEl);
   }
-};
+}
 
 grabParams();
