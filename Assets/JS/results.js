@@ -17,15 +17,14 @@ var getMovies = function (movieName) {
     "https://imdb-api.com/en/API/SearchMovie/" +
     movieApiKey +
     "/" +
-    movieName +
-    "&count=5";
+    movieName;
 
   fetch(movieApiUrl)
     .then(function (response) {
       if (response.ok) {
         return response.json();
       } else {
-        alert("Error: " + response.statusText);
+        console.log("Error: " + response.statusText);
       }
     })
     .then(function (data) {
@@ -39,9 +38,6 @@ var getMovies = function (movieName) {
       };
       console.log(movieData);
     })
-    .catch(function (error) {
-      alert("Unable to reach Movie Database");
-    });
 };
 
 function recipeAPI(recipe) {
@@ -68,13 +64,13 @@ function updateRecipeCard(values) {
 }
 
 function displayMovieSearch(movieData) {
-  for (var i = 0; movieData.results.length; i++) {
-    var movieTitleEl = $("<h1></h1>").text(movieData.results[i].title);
+  
+    var movieTitleEl = $("#title").text(movieData.results[0].title);
     movieContainer.append(movieTitleEl);
 
-    var movieImgEl = $("<img>").attr("src", movieData.results[i].img);
+    var movieImgEl = $("#poster").attr("src", movieData.results[0].image);
     movieContainer.append(movieImgEl);
-  }
+  
 }
 
 grabParams();
