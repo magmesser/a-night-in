@@ -1,4 +1,5 @@
 var recipeInput = $("#recipe-input");
+var movieInput = $("#movie-input")
 var submitBtn = $("#submit-btn");
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -8,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function formSubmit(event) {
     event.preventDefault();
-    var queryUrl = "./results.html?q=" + recipeInput.val();
-
+    var queryUrl = "./results.html?q=" + recipeInput.val() + "&movie=" + movieInput.val();
     location.assign(queryUrl);
 }
 
