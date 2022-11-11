@@ -12,12 +12,12 @@ function grabParams() {
   getMovies(movie);
 }
 
-var getMovies = function (movieName) {
+var getMovies = function (movieGenre) {
   var movieApiUrl =
-    "https://imdb-api.com/en/API/SearchMovie/" +
+    "https://imdb-api.com/en/API/AdvancedSearch/" +
     movieApiKey +
-    "/" +
-    movieName;
+    "/?genres=" +
+    movieGenre;
 
   fetch(movieApiUrl)
     .then(function (response) {
