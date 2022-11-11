@@ -1,6 +1,7 @@
 var movieApiKey = "k_ctt698mf";
 var recipeImg = $("#recipe-img")
 var ingredientsList = $("#ingredients-list")
+var movieContainer = $("#movieContainer");
 
 function grabParams() {
   var apiParamsArr = document.location.search.split("&");
@@ -11,8 +12,15 @@ function grabParams() {
   getMovies(movie);
 }
 
+function grabParams() {
+  var apiParamsArr = document.location.search.split("?");
+  console.log(apiParamsArr);
+  var recipe = apiParamsArr[1].split("=").pop()
+  recipeAPI(recipe);
+}
+
 var getMovies = function(movieName) {
-    var movieApiUrl = "https://imdb-api.com/en/API/SearchMovie/" + movieApiKey + "/" + movieName;
+    var movieApiUrl = "https://imdb-api.com/en/API/SearchMovie/" + movieApiKey + "/" + movieName + "&count=5";
 
     fetch(movieApiUrl)
       .then(function(response) {
@@ -24,7 +32,7 @@ var getMovies = function(movieName) {
       })
       .then(function(data){
         console.log(data);
-        // displayMovieSearch(data); -- to be added later
+        displayMovieSearch(data);
         
         let movieData = {
             title: data.results[0].title,
@@ -59,5 +67,13 @@ function updateRecipeCard(values) {
         ingredientsList.append(listIngredient);
     }
 }
+
+function displayMovieSearch(results) {
+  
+  for (var i = 0; results.length; i++){
+    var movieTitleEl = $('<h1></h1>').text(results[i].title);
+    movieContainer.append(movieTitleEl);
+  }
+};
 
 grabParams();
