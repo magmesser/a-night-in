@@ -9,6 +9,13 @@ function grabParams() {
   recipeAPI(recipe);
 }
 
+function grabParams() {
+  var apiParamsArr = document.location.search.split("?");
+  console.log(apiParamsArr);
+  var recipe = apiParamsArr[1].split("=").pop()
+  recipeAPI(recipe);
+}
+
 var getMovies = function(movieName) {
     var movieApiUrl = "https://imdb-api.com/en/API/SearchMovie/" + movieApiKey + "/" + movieName + "&count=5";
 
