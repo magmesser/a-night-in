@@ -34,7 +34,8 @@ var getMovies = function (movieGenre) {
       let movieData = {
         title: data.results[i].title,
         poster: data.results[i].image,
-        descrip: data.results[i].description,
+        rating: data.results[i].contentRating,
+        plot: data.results[i].plot,
       };
       console.log(movieData);
     })
@@ -69,8 +70,15 @@ function displayMovieSearch(movieData) {
   var movieTitleEl = $("#title").text(randomMovie.title);
   movieContainer.append(movieTitleEl);
 
+  var movieRatingEl = $('#rating').text(randomMovie.contentRating);
+  movieContainer.append(movieRatingEl);
+
+  var moviePlotEl = $('#plot').text(randomMovie.plot);
+  movieContainer.append(moviePlotEl);
+
   var movieImgEl = $("#poster").attr("src", randomMovie.image);
   movieContainer.append(movieImgEl);
+
 }
 
 grabParams();
