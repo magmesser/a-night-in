@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./assets/CSS/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   <title>A Night In</title>
 </head>
 
@@ -16,69 +17,74 @@
     <section class="split left">
       <section class="left content">
         <h1>A Night In</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <p>These days, there are ways you can enjoy movies without necessarily stepping to movie theaters. You can now
+          relax and enjoy your movie from the comfort of your own home or yard! Viewing movies can present an awesome
+          opportunity to relieve stress from our lives. It has been medically proven that stress is caused by a
+          continuous buildup of tension within a person and without a way to relieve it, then stress is inevitable. One
+          of the best ways to relieve the buildup of tension is through watching movies.
         </p>
         <!-- Modal Trigger -->
         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Get Started</a>
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4>A Night In</h4>
-            <form action="">
-              <!--<input id="recipe-input" type="text" placeholder="recipe">!-->
+      </section>
+      <div id='stars'></div>
+      <div id='stars2'></div>
+      <div id='stars3'></div>
+    </section>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>A Night In</h4>
+        <form action="">
+          <!--<input id="recipe-input" type="text" placeholder="recipe">!-->
+          <div class="row">
+            <div class="col s12">
               <div class="row">
-                <div class="col s12">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input placeholder="Input a Food Type! i.e. Pasta, Chicken, Pizza" type="text" id="recipe-input" class="autocomplete">
-                      <label for="autocomplete-input"></label>
-                    </div>
-                  </div>
+                <div class="input-field col s12">
+                  <input placeholder="Input a Food Type! i.e. Pasta, Chicken, Pizza" type="text" id="recipe-input"
+                    class="autocomplete">
+                  <label for="autocomplete-input"></label>
                 </div>
               </div>
-
-              <div class="input-field col s12">
-                <select id="movie-input">
-                  <option value="" disabled selected>Choose your genre</option>
-                  <option value="Action">Action</option>
-                  <option value="Animation">Animation</option>
-                  <option value="Biography">Biography</option>
-                  <option value="Comedy">Comedy</option>
-                  <option value="Crime">Crime</option>
-                  <option value="Documentary">Documentary</option>
-                  <option value="Drama">Drama</option>
-                  <option value="Fantasy">Fantasy</option>
-                  <option value="Horror">Horror</option>
-                  <option value="Musical">Musical</option>
-                  <option value="Romance">Romance</option>
-                  <option value="Sci-Fi">Sci-Fi</option>
-                  <option value="Thriller">Thriller</option>
-                </select>
-                <label></label>
-              </div>
-
-
-
-              <!-- Action, Animation, Biography, Comedy, Crime, Documentary, Drama, Fantasy, Horror, Musical, Romance, Sci-Fi, Thriller -->
-            </form>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Apply
-              <i class="material-icons right">send</i>
-            </button>
+
+          <div class="input-field col s12">
+            <select id="movie-input">
+              <option value="" disabled selected>Choose your genre</option>
+              <option value="Action">Action</option>
+              <option value="Animation">Animation</option>
+              <option value="Biography">Biography</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Crime">Crime</option>
+              <option value="Documentary">Documentary</option>
+              <option value="Drama">Drama</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Horror">Horror</option>
+              <option value="Musical">Musical</option>
+              <option value="Romance">Romance</option>
+              <option value="Sci-Fi">Sci-Fi</option>
+              <option value="Thriller">Thriller</option>
+            </select>
+            <label></label>
           </div>
-        </div>
-      </section>
-    </section>
+
+
+
+          <!-- Action, Animation, Biography, Comedy, Crime, Documentary, Drama, Fantasy, Horror, Musical, Romance, Sci-Fi, Thriller -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Apply
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+
+
 
 
     <section class="split right">
-      <img src="">
+      <img src="Assets/Photos/movie.jpg">
     </section>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
