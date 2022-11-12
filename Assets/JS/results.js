@@ -64,13 +64,13 @@ function updateRecipeCard(values) {
 }
 
 function displayMovieSearch(movieData) {
+  var randomMovie = movieData.results[Math.floor(Math.random() * movieData.results.length)]
 
-  var movieTitleEl = $("#title").text(movieData.results[0].title);
+  var movieTitleEl = $("#title").text(randomMovie.title);
   movieContainer.append(movieTitleEl);
 
-  var movieImgEl = $("#poster").attr("src", movieData.results[0].image);
+  var movieImgEl = $("#poster").attr("src", randomMovie.image);
   movieContainer.append(movieImgEl);
-
 }
 
 grabParams();
