@@ -3,6 +3,8 @@ var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
 var ingredientsList = $("#ingredients-list")
 var movieContainer = $("#movieContainer");
+var dontLikeMovie = $("#dont-like-movie");
+var dontLikeRecipe = $("#dont-like-recipe");
 
 function grabParams() {
   var apiParamsArr = document.location.search.split("&");
@@ -82,3 +84,16 @@ function displayMovieSearch(movieData) {
 }
 
 grabParams();
+
+dontLikeRecipe.click(function() {
+  var apiParamsArr = document.location.search.split("&");
+  var recipe = apiParamsArr[0].split("=").pop();
+  ingredientsList.empty();
+  recipeAPI(recipe);
+})
+
+dontLikeMovie.click(function () {
+  var apiParamsArr = document.location.search.split("&");
+  var movie = apiParamsArr[1].split("=").pop()
+  getMovies(movie);
+})
