@@ -14,6 +14,18 @@ document.addEventListener('DOMContentLoaded', function () {
   M.FormSelect.init(elems);
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  var auto = document.querySelectorAll('.autocomplete');
+  M.Autocomplete.init(auto, {
+    data: {
+      'Chicken': null,
+      'Pasta': null,
+      'Pizza': null,
+      'Salad': null
+    },
+    limit: 1
+  })
+});
 
 function formSubmit(event) {
   event.preventDefault();
