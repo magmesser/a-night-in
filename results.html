@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
     <title>A Night In</title>
 </head>
 
@@ -14,9 +15,9 @@
     <main>
         <h1>Enjoy Your Night</h1>
         <section class="split left">
-            <div class="recipe"> 
+            <div class="recipe">
                 <a id="recipe-url"><img id="recipe-img"></a>
-                <div id="ingredients-list"></div>  
+                <div id="ingredients-list"></div>
             </div>
         </section>
 
@@ -28,10 +29,65 @@
                 <img id="poster">
             </div>
             <div class="container">
-                <button type="button">Button</button>
-          </div>
+                <!-- <button type="button">Restart</button> -->
+                 <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" id="restart-modal" href="#modal1">Restart</a>
+            </div>
         </section>
     </main>
+
+    <!-- copying modal code from home page -->
+    <section>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>A Night In</h4>
+                <form action="">
+                    <!--<input id="recipe-input" type="text" placeholder="recipe">!-->
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="Input a Food Type! i.e. Pasta, Chicken, Pizza" type="text"
+                                        id="recipe-input" class="autocomplete">
+                                    <label for="autocomplete-input"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <select id="movie-input">
+                            <option value="" disabled selected>Choose your genre</option>
+                            <option value="Action">Action</option>
+                            <option value="Animation">Animation</option>
+                            <option value="Biography">Biography</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Documentary">Documentary</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Musical">Musical</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Thriller">Thriller</option>
+                        </select>
+                        <label></label>
+                    </div>
+
+                    <!-- Action, Animation, Biography, Comedy, Crime, Documentary, Drama, Fantasy, Horror, Musical, Romance, Sci-Fi, Thriller -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="submit-btn" class="btn waves-effect waves-light" type="submit" name="action">Apply
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
