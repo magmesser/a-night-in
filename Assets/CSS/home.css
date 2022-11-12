@@ -1,0 +1,72 @@
+/* Color Theme */
+:root {
+  --hue-blue: #5F7F9D;
+  --hue-liteblue: #A6C4D1;
+  --hue-grey: #857F82;
+  --hue-brown: #A89887;
+  --hue-beige: #E8CCAC;
+  --hue-white: #FAF9F6;
+}
+
+body {
+  background-color: var(--hue-white);
+  color: var(--hue-grey);
+}
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  /* position: fixed; */
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: var(--hue-liteblue);
+  color: var(--hue-white);
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: var(--hue-blue);
+  /* background-image: ; */
+}
+
+.left content {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  background-color: var(--hue-white);
+}
+
+p {
+  margin: 50px;
+}
+
+h1 {
+  margin-left: 30px !important;
+}
+
+.btn {
+  background-color: var(--hue-beige);
+}
+
+.btn:hover {
+  background-color: var(--hue-brown);
+}
+
+#home-image {
+  height: 800px;
+  width: auto;
+  display: relative;
+  padding: 5px;
+  margin: 5px;
+}
