@@ -3,6 +3,8 @@ var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
 var ingredientsList = $("#ingredients-list")
 var movieContainer = $("#movieContainer");
+var dontLikeMovie = $("#dont-like-movie");
+var dontLikeRecipe = $("#dont-like-recipe");
 // var copied from home page for modal restart
 var recipeInput = $("#recipe-input");
 var movieInput = $("#movie-input");
@@ -87,6 +89,20 @@ function displayMovieSearch(movieData) {
 
 grabParams();
 
+
+dontLikeRecipe.click(function() {
+  var apiParamsArr = document.location.search.split("&");
+  var recipe = apiParamsArr[0].split("=").pop();
+  ingredientsList.empty();
+  recipeAPI(recipe);
+})
+
+dontLikeMovie.click(function () {
+  var apiParamsArr = document.location.search.split("&");
+  var movie = apiParamsArr[1].split("=").pop()
+  getMovies(movie);
+})
+
 // copy of Modal from home page
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -120,5 +136,3 @@ function formSubmit(event) {
 }
 
 submitBtn.click(formSubmit);
-
-
