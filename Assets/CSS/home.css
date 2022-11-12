@@ -13,38 +13,25 @@ body {
   color: var(--hue-grey);
 }
 
-/* Split the screen in half */
-.split {
+main {
+  display: flex;
+  width: 100vw;
   height: 100%;
-  width: 50%;
-  /* position: fixed; */
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
 }
 
-/* Control the left side */
 .left {
-  left: 0;
   background-color: var(--hue-liteblue);
   color: var(--hue-white);
+  width: 65vw;
+height: 100vh;
 }
 
-/* Control the right side */
 .right {
-  right: 0;
+  display: flex;
+  justify-content: center;
   background-color: var(--hue-blue);
-  /* background-image: ; */
-}
-
-.left content {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  text-align: left;
-  background-color: var(--hue-white);
+  width: 35vw;
+  height: 100vh;
 }
 
 p {
@@ -64,9 +51,8 @@ h1 {
 }
 
 #home-image {
-  height: 800px;
+  background-image: url("../Photos/dinner.jpg");
+  height: 100vh;
   width: auto;
-  display: relative;
   padding: 5px;
-  margin: 5px;
 }
