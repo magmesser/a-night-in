@@ -5,6 +5,10 @@ var ingredientsList = $("#ingredients-list")
 var movieContainer = $("#movieContainer");
 var dontLikeMovie = $("#dont-like-movie");
 var dontLikeRecipe = $("#dont-like-recipe");
+// var copied from home page for modal restart
+var recipeInput = $("#recipe-input");
+var movieInput = $("#movie-input");
+var submitBtn = $("#submit-btn");
 
 function grabParams() {
   var apiParamsArr = document.location.search.split("&");
@@ -85,6 +89,7 @@ function displayMovieSearch(movieData) {
 
 grabParams();
 
+
 dontLikeRecipe.click(function() {
   var apiParamsArr = document.location.search.split("&");
   var recipe = apiParamsArr[0].split("=").pop();
@@ -97,3 +102,37 @@ dontLikeMovie.click(function () {
   var movie = apiParamsArr[1].split("=").pop()
   getMovies(movie);
 })
+
+// copy of Modal from home page
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.modal');
+  M.Modal.init(elems);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('select');
+  M.FormSelect.init(elems);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var auto = document.querySelectorAll('.autocomplete');
+  M.Autocomplete.init(auto, {
+    data: {
+      'Chicken': null,
+      'Pasta': null,
+      'Pizza': null,
+      'Salad': null
+    },
+    limit: 1
+  })
+});
+
+function formSubmit(event) {
+  event.preventDefault();
+  var queryUrl = "./results.html?q=" + recipeInput.val() + "&movie=" + movieInput.val();
+  location.assign(queryUrl);
+  grabParams();
+}
+
+submitBtn.click(formSubmit);
