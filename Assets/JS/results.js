@@ -1,4 +1,5 @@
-var movieApiKey = "k_ctt698mf";
+// var movieApiKey = "k_ctt698mf";
+var movieApiKey = "k_8sbsu5mx";
 var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
 var ingredientsList = $("#ingredients-list")
