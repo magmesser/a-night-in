@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <link rel="stylesheet" href="./assets/CSS/normalize.css">
+    <link rel="stylesheet" href="./assets/CSS/results.css">
     <title>A Night In</title>
 </head>
 
@@ -15,16 +16,16 @@
     <main>
         <h1>Enjoy Your Night</h1>
         <section class="split left">
-            <div class="recipe"> 
-                <button id="dont-like-recipe">I Don't Like It - Recipe</button>
+            <div class="recipe">
+                <button id="dont-like-recipe" class="btn">I Don't Like It - Recipe</button>
                 <a id="recipe-url" target="_blank"><img id="recipe-img"></a>
-                <div id="ingredients-list"></div>  
+                <div id="ingredients-list"></div>
             </div>
         </section>
 
         <section class="split right">
             <div class="movie" id="movieContainer">
-                <button id="dont-like-movie">I Don't Like It - Movie</button>
+                <button id="dont-like-movie" class="btn">I Don't Like It - Movie</button>
                 <h3 id="title"></h3>
                 <p id="rating"></p>
                 <p id="plot"></p>
@@ -32,7 +33,7 @@
             </div>
             <div class="container">
                 <!-- <button type="button">Restart</button> -->
-                 <!-- Modal Trigger -->
+                <!-- Modal Trigger -->
                 <a class="waves-effect waves-light btn modal-trigger" id="restart-modal" href="#modal1">Restart</a>
             </div>
         </section>
