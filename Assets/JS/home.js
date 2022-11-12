@@ -1,5 +1,5 @@
 var recipeInput = $("#recipe-input");
-var movieInput = $("#movie-input")
+var movieInput = $("#movie-input");
 var submitBtn = $("#submit-btn");
 
 
