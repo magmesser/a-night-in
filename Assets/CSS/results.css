@@ -45,3 +45,8 @@ body {
 .btn:hover {
     background-color: var(--hue-brown);
 }
+
+#poster {
+    width: 300px;
+    height: 400px;
+  }
