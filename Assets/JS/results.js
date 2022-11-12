@@ -41,36 +41,36 @@ var getMovies = function (movieGenre) {
 };
 
 function recipeAPI(recipe) {
-    var recipeQueryUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipe + "&app_id=ffb9b7d6&app_key=177ebaaec33bbf5decf819cd890a664a"
-    fetch(recipeQueryUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            updateRecipeCard(data)
-        })
+  var recipeQueryUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipe + "&app_id=ffb9b7d6&app_key=177ebaaec33bbf5decf819cd890a664a"
+  fetch(recipeQueryUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      updateRecipeCard(data)
+    })
 }
 
 function updateRecipeCard(values) {
-    var randomRecipe = values.hits[Math.floor(Math.random() * values.hits.length)].recipe;
-    var ingredients = randomRecipe.ingredientLines
-    recipeImg.attr("src", randomRecipe.image)
-    recipeUrl.attr("href", randomRecipe.url);
-    console.log(randomRecipe);
-    for (let i = 0; i < ingredients.length; i++) {
-        var listIngredient = $("<div></div>").html(ingredients[i]);
-        ingredientsList.append(listIngredient);
-    }
+  var randomRecipe = values.hits[Math.floor(Math.random() * values.hits.length)].recipe;
+  var ingredients = randomRecipe.ingredientLines
+  recipeImg.attr("src", randomRecipe.image)
+  recipeUrl.attr("href", randomRecipe.url);
+  console.log(randomRecipe);
+  for (let i = 0; i < ingredients.length; i++) {
+    var listIngredient = $("<div></div>").html(ingredients[i]);
+    ingredientsList.append(listIngredient);
+  }
 }
 
 function displayMovieSearch(movieData) {
-  
-    var movieTitleEl = $("#title").text(movieData.results[0].title);
-    movieContainer.append(movieTitleEl);
 
-    var movieImgEl = $("#poster").attr("src", movieData.results[0].image);
-    movieContainer.append(movieImgEl);
-  
+  var movieTitleEl = $("#title").text(movieData.results[0].title);
+  movieContainer.append(movieTitleEl);
+
+  var movieImgEl = $("#poster").attr("src", movieData.results[0].image);
+  movieContainer.append(movieImgEl);
+
 }
 
 grabParams();
