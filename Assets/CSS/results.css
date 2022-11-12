@@ -1,0 +1,48 @@
+/* Color Theme: https://color.adobe.com/search?q=moody*/
+:root {
+    --hue-blue: #5F7F9D;
+    --hue-liteblue: #A6C4D1;
+    --hue-grey: #857F82;
+    --hue-brown: #A89887;
+    --hue-beige: #E8CCAC;
+    --hue-white: #FAF9F6;
+}
+
+body {
+    background-color: var(--hue-white);
+    color: var(--hue-grey);
+}
+
+#header {
+    background-color: var(--hue-brown);
+    display: flex;
+    justify-content: center;
+    font-size: 64px;
+}
+
+.left {
+    background-color: var(--hue-liteblue);
+    color: var(--hue-white);
+    width: 50vw;
+  height: 100vh;
+  }
+  .right {
+    display: flex;
+    justify-content: center;
+    background-color: var(--hue-blue);
+    width: 50vw;
+    height: 100vh;
+  }
+
+.btn {
+    background-color: var(--hue-beige);
+}
+
+.btn:hover {
+    background-color: var(--hue-brown);
+}
+
+#poster {
+    width: 300px;
+    height: 400px;
+  }

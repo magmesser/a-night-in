@@ -1,0 +1,58 @@
+/* Color Theme: https://color.adobe.com/search?q=moody*/
+:root {
+  --hue-blue: #5F7F9D;
+  --hue-liteblue: #A6C4D1;
+  --hue-grey: #857F82;
+  --hue-brown: #A89887;
+  --hue-beige: #E8CCAC;
+  --hue-white: #FAF9F6;
+}
+
+body {
+  background-color: var(--hue-white);
+  color: var(--hue-grey);
+}
+
+main {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+}
+
+.left {
+  background-color: var(--hue-liteblue);
+  color: var(--hue-white);
+  width: 65vw;
+height: 100vh;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  background-color: var(--hue-blue);
+  width: 35vw;
+  height: 100vh;
+}
+
+p {
+  margin: 50px;
+}
+
+h1 {
+  margin-left: 30px !important;
+}
+
+.btn {
+  background-color: var(--hue-beige);
+}
+
+.btn:hover {
+  background-color: var(--hue-brown);
+}
+
+#home-image {
+  background-image: url("../Photos/dinner.jpg");
+  height: 100vh;
+  width: auto;
+  padding: 5px;
+}
