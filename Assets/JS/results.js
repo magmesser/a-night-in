@@ -1,4 +1,4 @@
-// var movieApiKey = "k_ctt698mf";
+// var movieApiKey = "k_ctt698mf"; MM key
 var movieApiKey = "k_8sbsu5mx";
 var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
@@ -23,7 +23,7 @@ var getMovies = function (movieGenre) {
   var movieApiUrl =
     "https://imdb-api.com/en/API/AdvancedSearch/" +
     movieApiKey +
-    "/?genres=" +
+    "/?title_type=feature&genres=" +
     movieGenre;
 
   fetch(movieApiUrl)
@@ -82,14 +82,15 @@ function displayMovieSearch(movieData) {
   var movieTitleEl = $("#title").text(randomMovie.title);
   movieContainer.append(movieTitleEl);
 
-  var movieRatingEl = $("#rating").text(randomMovie.contentRating);
+  var movieImgEl = $("#poster").attr("src", randomMovie.image);
+  movieContainer.append(movieImgEl);
+
+  var movieRatingEl = $("#rating").text("Rated: " + randomMovie.contentRating);
   movieContainer.append(movieRatingEl);
 
   var moviePlotEl = $("#plot").text(randomMovie.plot);
   movieContainer.append(moviePlotEl);
-
-  var movieImgEl = $("#poster").attr("src", randomMovie.image);
-  movieContainer.append(movieImgEl);
+  
 }
 
 grabParams();
