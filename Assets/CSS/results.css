@@ -35,7 +35,7 @@ h3{
 
 .recipe {
     margin-left: 19%;
-    line-height: normal;
+    line-height: 2;
     margin-top: 10%;
 }
 
@@ -52,17 +52,17 @@ img {
 }
 
 #dont-like-movie {
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 #restart-modal {
-float: right;
+margin-left: 250px;
+margin-top: 10px;
 }
 
 html {
-        height: 300%;
+        height: 130%;
         background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-        overflow: hidden;
       }
       
  #stars {
