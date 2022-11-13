@@ -13,8 +13,7 @@
 .left {
   left: 0;
   background-color: transparent;
-  margin-top: 30px
-  ;
+  margin-top: 30px;
 }
 
 /* Control the right side */
@@ -35,8 +34,7 @@
 p {
   margin: 50px;
   color: whitesmoke;
-  line-height: 2
-  ;
+  line-height: 2;
 }
 
 h1 {
@@ -128,9 +126,4 @@ html {
   to {
     transform: translateY(-2000px);
   }
-
-
-#poster {
-  width: 300px;
-  height: 400px;
 }
