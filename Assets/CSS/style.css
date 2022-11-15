@@ -13,7 +13,6 @@
 .left {
   left: 0;
   background-color: transparent;
-  margin-top: 30px;
 }
 
 /* Control the right side */
@@ -32,9 +31,12 @@
 }
 
 p {
-  margin: 50px;
+  text-align: justify;
   color: whitesmoke;
   line-height: 2;
+  font-family: serif;
+  padding-left: 50px;
+  font-size: medium;
 }
 
 h1 {
