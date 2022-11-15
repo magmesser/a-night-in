@@ -20,15 +20,20 @@
     <div id='stars2'></div>
     <div id='stars3'></div>
     <section class="split left">
-      <section class="left content">  
-        <h1>A Night In</h1> 
-        <p>These days, there are ways you can enjoy movies without necessarily stepping out to movie theaters. You can now
+      <section class="left content">
+        <h1>A Night In</h1>
+        <p>These days, there are ways you can enjoy movies without necessarily stepping out to movie theaters. You can
+          now
           relax and enjoy your movie from the comfort of your own home or yard! Viewing movies can present an awesome
           opportunity to relieve stress from our lives. It has been medically proven that stress is caused by a
           continuous buildup of tension within a person and without a way to relieve it, then stress is inevitable. One
           of the best ways to relieve the buildup of tension is through watching movies.
           <br><br>
-          Now with A Night In, you can search for a meal to pair with your movie for the perfect night in.  Search by meal, ingredient, or dietary restrictions (such as vegan, gluten free, or vegetarian). Select your favorite movie genre and let us do the hard part for you -- making decisions!  If you like the suggested options, you can select the "I Don't Like It" button to change either movie or meal.  Change your mind? Select the  Restart button to change the selections!
+          Now with A Night In, you can search for a meal to pair with your movie for the perfect night in. Search by
+          meal, ingredient, or dietary restrictions (such as vegan, gluten free, or vegetarian). Select your favorite
+          movie genre and let us do the hard part for you -- making decisions! If you like the suggested options, you
+          can select the "I Don't Like It" button to change either movie or meal. Change your mind? Select the Restart
+          button to change the selections!
         </p>
         <!-- Modal Trigger -->
         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Get Started</a>
@@ -43,12 +48,10 @@
           <div class="row">
             <div class="col s12">
               <div class="row">
-
                 <div class="input-field col s12">
                   <input placeholder="Input a Food Type! i.e. Pasta, Chicken, Pizza" type="text" id="recipe-input"
                     class="autocomplete">
                   <label for="autocomplete-input"></label>
-
                 </div>
               </div>
             </div>
@@ -56,7 +59,7 @@
 
           <div class="input-field col s12">
             <select id="movie-input">
-              <option value="" disabled selected>Choose your genre</option>
+              <option value="" selected="selected">Choose your genre</option>
               <option value="Action">Action</option>
               <option value="Animation">Animation</option>
               <option value="Biography">Biography</option>
@@ -78,10 +81,12 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button id="random-btn" class="btn waves-effect waves-light text-center" type="submit" name="action">Choose For Me!
+        <button id="random-btn" class="btn waves-effect waves-light text-center" type="submit" name="action">Choose For
+          Me!
           <i class="material-icons" style="font-size: 13px">send</i>
         </button>
-        <button id="submit-btn" class="btn waves-effect waves-light text-center" type="submit" name="action">Apply
+        <button id="submit-btn" class="btn waves-effect waves-light text-center" disabled="disabled" type="submit"
+          name="action">Apply
           <i class="material-icons" style="font-size: 13px">send</i>
         </button>
       </div>
