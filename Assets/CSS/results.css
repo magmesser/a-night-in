@@ -18,18 +18,22 @@
     color: whitesmoke;
     width: 49vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .right {
-    justify-content: center;
     background-color: transparent;
     width: 49vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;   
 }
 
 #poster {
     width: 300px;
     height: 400px;
+    align-items: center;
 }
 
 h3 {
@@ -40,18 +44,26 @@ h3 {
 
 .movie {
     color: whitesmoke;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .recipe {
     margin-left: 19%;
     line-height: 2;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     width: 300px;
     overflow-wrap: normal;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 #recipe-image {
     margin-bottom: auto;
+}
+
+#ingredients-list {
+    list-style: square;
 }
 
 img {
@@ -64,6 +76,7 @@ img {
 
 #dont-like-movie {
     margin-top: 40px;
+    
 }
 
 #restart-modal {
