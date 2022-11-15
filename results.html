@@ -23,14 +23,35 @@
             <a class="waves-effect waves-light btn modal-trigger" id="restart-modal" href="#modal1"><i
                     class="material-icons center">replay</i></a>
         </div>
-
+        <div class="container">
+            <!-- Local Storage -->
+            <a class="waves-effect waves-light btn" id="favorite-btn"><i
+                    class="material-icons center">favorite_border</i></a>
+        </div>
+        <div class="container">
+            <!-- View Local Storage -->
+            <a class="waves-effect waves-light btn modal-trigger" id="view-favorite-btn" href="#modal2">View
+                Favorites</a>
+        </div>
+        <!-- Local Storage Modal Structure -->
+        <div id="modal2" class="modal">
+            <div id="local-storage-modal" class="modal-content">
+                <div id="local-storage-recipe">Left Side</div>
+                <div id="local-storage-movie">Right Side</div>
+            </div>
+            <div class="modal-footer">
+                <a class="waves-effect waves-green btn-flat">Clear Favorites</a>
+            </div>
+        </div>
         <section class="left">
             <div class="recipe">
                 <h3 id="recipe-title"></h3>
                 <a id="recipe-url" target="_blank"><img id="recipe-img"></a>
                 <ul>
                     <li>
-                        <div id="ingredients-list"></div>
+                        <div id="ingredients-list">
+                            <h5 style="text-decoration: underline;">Ingredients List</h5>
+                        </div>
                     </li>
                 </ul>
                 <button id="dont-like-recipe" class="btn">I Don't Like It - Recipe</button>
@@ -44,10 +65,10 @@
                 <img id="poster">
                 <p id="rating"></p>
                 <p id="plot"></p>
-                
-                <button id="dont-like-movie" class="btn">I Don't Like It - Movie</button> 
+
+                <button id="dont-like-movie" class="btn">I Don't Like It - Movie</button>
             </div>
-            
+
         </section>
     </main>
 

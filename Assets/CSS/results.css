@@ -13,6 +13,31 @@
     top: 10px;
 }
 
+#favorite-btn {
+    position: fixed;
+    right: 10px;
+    top: 60px;
+}
+
+#view-favorite-btn {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+}
+
+#local-storage-modal {
+    width: 100%;
+    display: flex;
+}
+
+#local-storage-recipe {
+    width: 50%;
+}
+
+#local-storage-movie {
+    width: 50%;
+}
+
 .left {
     background-color: transparent;
     color: whitesmoke;
