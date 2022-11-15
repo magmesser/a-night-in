@@ -1,6 +1,6 @@
 // var movieApiKey = "k_ctt698mf"; MM key
 var movieApiKey = "k_8sbsu5mx";
-var recipeTitle = $("#recipe-title")
+var recipeTitle = $("#recipe-title");
 var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
 var ingredientsList = $("#ingredients-list");
@@ -72,18 +72,10 @@ function displayMovieSearch(movieData) {
   var randomMovie =
     movieData.results[Math.floor(Math.random() * movieData.results.length)];
 
-  var movieTitleEl = $("#title").text(randomMovie.title);
-  movieContainer.append(movieTitleEl);
-
-  var movieImgEl = $("#poster").attr("src", randomMovie.image);
-  movieContainer.append(movieImgEl);
-
-  var movieRatingEl = $("#rating").text("Rated: " + randomMovie.contentRating);
-  movieContainer.append(movieRatingEl);
-
-  var moviePlotEl = $("#plot").text(randomMovie.plot);
-  movieContainer.append(moviePlotEl);
-  
+  $("#title").text(randomMovie.title);
+  $("#poster").attr("src", randomMovie.image);
+  $("#rating").text("Rated: " + randomMovie.contentRating);
+  $("#plot").text(randomMovie.plot);
 }
 
 grabParams();
@@ -135,11 +127,20 @@ function formSubmit(event) {
 }
 
 function randomInputs(event) {
-  var movieGenre = "action&animation&biography&comedy&crime&documentary&drama&fantasy&horror&musical&romance&sci-fi&thriller".split("&")
-  var foodInput = "chicken&steak&salad&pasta&fish&seafood&beef&lamb&veal&pork&eggs&tacos&pizza".split("&")
+  var movieGenre =
+    "action&animation&biography&comedy&crime&documentary&drama&fantasy&horror&musical&romance&sci-fi&thriller".split(
+      "&"
+    );
+  var foodInput =
+    "chicken&steak&salad&pasta&fish&seafood&beef&lamb&veal&pork&eggs&tacos&pizza".split(
+      "&"
+    );
   event.preventDefault();
   var queryUrl =
-    "./results.html?q=" + foodInput[Math.floor(Math.random()*foodInput.length)] + "&movie=" + movieGenre[Math.floor(Math.random()*movieGenre.length)];
+    "./results.html?q=" +
+    foodInput[Math.floor(Math.random() * foodInput.length)] +
+    "&movie=" +
+    movieGenre[Math.floor(Math.random() * movieGenre.length)];
   location.assign(queryUrl);
 }
 
