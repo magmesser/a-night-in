@@ -44,3 +44,9 @@ function randomInputs(event) {
 
 submitBtn.click(formSubmit);
 randomBtn.click(randomInputs);
+
+$(function() {
+  $('#recipe-input, #movie-input').on('keyup change',function() {
+    $('#submit-btn').prop('disabled', ($('#recipe-input').val() == '' || $('#movie-input').val() == ''));
+  });
+})
