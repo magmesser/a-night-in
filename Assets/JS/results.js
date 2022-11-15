@@ -1,5 +1,6 @@
 // var movieApiKey = "k_ctt698mf"; MM key
 var movieApiKey = "k_8sbsu5mx";
+var recipeTitle = $("#recipe-title")
 var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
 var ingredientsList = $("#ingredients-list");
@@ -35,16 +36,7 @@ var getMovies = function (movieGenre) {
       }
     })
     .then(function (data) {
-      console.log(data);
       displayMovieSearch(data);
-
-      let movieData = {
-        title: data.results[i].title,
-        poster: data.results[i].image,
-        rating: data.results[i].contentRating,
-        plot: data.results[i].plot,
-      };
-      console.log(movieData);
     });
 };
 
@@ -66,9 +58,9 @@ function updateRecipeCard(values) {
   var randomRecipe =
     values.hits[Math.floor(Math.random() * values.hits.length)].recipe;
   var ingredients = randomRecipe.ingredientLines;
+  recipeTitle.html(randomRecipe.label);
   recipeImg.attr("src", randomRecipe.image);
   recipeUrl.attr("href", randomRecipe.url);
-  console.log(randomRecipe);
   for (let i = 0; i < ingredients.length; i++) {
     var listIngredient = $("<div></div>").html(ingredients[i]);
     ingredientsList.append(listIngredient);
