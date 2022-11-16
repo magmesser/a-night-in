@@ -26,9 +26,19 @@
 }
 
 #local-storage-modal {
+    background-color: #2C2C2C;
+    flex-direction: column;
     width: 100%;
     display: flex;
 }
+
+.container-recipe-movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+
 
 #local-storage-recipe {
     width: 50%;
@@ -36,6 +46,15 @@
 
 #local-storage-movie {
     width: 50%;
+}
+
+.local-storage-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 30px;
+    padding: 45px 0;
+    color: white;
 }
 
 .left {

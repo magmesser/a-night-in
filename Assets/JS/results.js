@@ -9,6 +9,7 @@ var ingredientsList = $("#ingredients-list");
 var movieContainer = $("#movieContainer");
 var dontLikeMovie = $("#dont-like-movie");
 var dontLikeRecipe = $("#dont-like-recipe");
+var localStorageModal = $("#local-storage-modal");
 // var copied from home page for modal restart
 var recipeInput = $("#recipe-input");
 var movieInput = $("#movie-input");
@@ -86,13 +87,18 @@ grabParams();
 dontLikeRecipe.click(function () {
   var apiParamsArr = document.location.search.split("&");
   var recipe = apiParamsArr[0].split("=").pop();
+  favoriteBtn.removeClass("red darken-4");
   ingredientsList.empty();
+  var ingredientsListHeading = $("<h5></h5>").html("Ingredients List");
+  ingredientsListHeading.attr("style", "text-decoration: underline;");
+  ingredientsList.append(ingredientsListHeading);
   recipeAPI(recipe);
 });
 
 dontLikeMovie.click(function () {
   var apiParamsArr = document.location.search.split("&");
   var movie = apiParamsArr[1].split("=").pop();
+  favoriteBtn.removeClass("red darken-4");
   getMovies(movie);
 });
 
@@ -148,7 +154,6 @@ function randomInputs(event) {
 }
 
 function populateLocalStorage() {
-  favoriteBtn.addClass("red darken-4");
   var localStorageValue = localStorage.getItem("favorites");
   var recipeNMovie = {
     recipeTitle: recipeTitle.text(),
@@ -159,42 +164,73 @@ function populateLocalStorage() {
   };
   if (localStorageValue) {
     var parsedValue = JSON.parse(localStorageValue);
-    parsedValue.push(recipeNMovie);
-    console.log(parsedValue);
-    localStorage.setItem("favorites", JSON.stringify(parsedValue));
+    debugger
+    var value = parsedValue.find(e => e.recipeTitle == recipeNMovie.recipeTitle && e.movieTitle == recipeNMovie.movieTitle)
+    var index = parsedValue.indexOf(value);
+    if (index > -1) {
+      favoriteBtn.removeClass("red darken-4");
+      parsedValue.splice(index);
+      localStorage.setItem("favorites", JSON.stringify(parsedValue));
+      checkLocalStorage();
+    } else {
+      favoriteBtn.addClass("red darken-4");
+      parsedValue.push(recipeNMovie);
+      localStorage.setItem("favorites", JSON.stringify(parsedValue));
+      checkLocalStorage();
+    }
   } else {
+    favoriteBtn.addClass("red darken-4");
     localStorage.setItem("favorites", JSON.stringify([recipeNMovie]));
+    checkLocalStorage();
   }
-
 }
 
 function checkLocalStorage() {
   var localStorageValue = localStorage.getItem("favorites");
-  var localStorageRecipe = $("#local-storage-recipe");
-  var localStorageMovie = $("#local-storage-movie");
+  localStorageModal.empty();
   if (localStorageValue) {
     var parsedValue = JSON.parse(localStorageValue);
     for (city in parsedValue) {
-      console.log(parsedValue[city])
-      var storedRecipeTitle = $("<div></div>").html(parsedValue[city].recipeTitle);
-      var storedRecipeUrl = $("<a></a>");
-      var storedRecipeImg = $("<img></img>");
-      storedRecipeImg.attr("src", parsedValue[city].recipeImg);
-      storedRecipeUrl.attr("href", parsedValue[city].recipeUrl);
-      storedRecipeUrl.append(storedRecipeImg);
-      storedRecipeTitle.append(storedRecipeUrl);
-      localStorageRecipe.append(storedRecipeTitle);
-      var storedMovieTitle = $("<div></div>").html(parsedValue[city].movieTitle);
-      var storedMoviePoster = $("<img></img>");
-      storedMoviePoster.attr("src", parsedValue[city].moviePoster);
-      storedMovieTitle.append(storedMoviePoster);
-      localStorageMovie.append(storedMovieTitle);
+      populateStoredValues(parsedValue[city]);
     }
   }
+}
+
+function populateStoredValues(values) {
+  var recipeNMovieContainer = $("<div></div>");
+  recipeNMovieContainer.addClass("local-storage-container");
+  localStorageModal.append(recipeNMovieContainer);
+  var storedRecipeContainer = $("<div></div>");
+  storedRecipeContainer.attr("class", "container-recipe-movie")
+  var storedRecipeTitle = $("<div></div>").html(values.recipeTitle);
+  storedRecipeContainer.append(storedRecipeTitle);
+  var storedRecipeUrl = $("<a></a>");
+  var storedRecipeImg = $("<img></img>");
+  storedRecipeImg.attr("src", values.recipeImg);
+  storedRecipeUrl.attr("href", values.recipeUrl);
+  storedRecipeImg.attr("style", "border: 10px solid white");
+  storedRecipeUrl.append(storedRecipeImg);
+  storedRecipeContainer.append(storedRecipeUrl);
+  recipeNMovieContainer.append(storedRecipeContainer);
+
+  var storedMovieContainer = $("<div></div>");
+  storedMovieContainer.attr("class", "container-recipe-movie")
+  var storedMovieTitle = $("<div></div>").html(values.movieTitle);
+  storedMovieContainer.append(storedMovieTitle);
+  var storedMoviePoster = $("<img></img>");
+  storedMoviePoster.attr("src", values.moviePoster);
+  storedMoviePoster.attr("style", "width: 300px; height: 400px; border: 10px solid white")
+  storedMovieContainer.append(storedMoviePoster);
+  recipeNMovieContainer.append(storedMovieContainer);
 }
 
 checkLocalStorage();
 favoriteBtn.click(populateLocalStorage);
 submitBtn.click(formSubmit);
 randomBtn.click(randomInputs);
+$("#clear-local-storage").click(function () {
+  favoriteBtn.removeClass("red darken-4");
+  localStorage.clear();
+  checkLocalStorage();
+})
 
