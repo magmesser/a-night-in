@@ -4,7 +4,7 @@ var recipeTitle = $("#recipe-title");
 var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
 var movieTitle = $("#title");
-var moviePoster = $("#poster")
+var moviePoster = $("#poster");
 var ingredientsList = $("#ingredients-list");
 var movieContainer = $("#movieContainer");
 var dontLikeMovie = $("#dont-like-movie");
@@ -160,12 +160,16 @@ function populateLocalStorage() {
     recipeImg: recipeImg.attr("src"),
     recipeUrl: recipeUrl.attr("href"),
     movieTitle: movieTitle.text(),
-    moviePoster: moviePoster.attr("src")
+    moviePoster: moviePoster.attr("src"),
   };
   if (localStorageValue) {
     var parsedValue = JSON.parse(localStorageValue);
-    debugger
-    var value = parsedValue.find(e => e.recipeTitle == recipeNMovie.recipeTitle && e.movieTitle == recipeNMovie.movieTitle)
+    debugger;
+    var value = parsedValue.find(
+      (e) =>
+        e.recipeTitle == recipeNMovie.recipeTitle &&
+        e.movieTitle == recipeNMovie.movieTitle
+    );
     var index = parsedValue.indexOf(value);
     if (index > -1) {
       favoriteBtn.removeClass("red darken-4");
@@ -201,7 +205,7 @@ function populateStoredValues(values) {
   recipeNMovieContainer.addClass("local-storage-container");
   localStorageModal.append(recipeNMovieContainer);
   var storedRecipeContainer = $("<div></div>");
-  storedRecipeContainer.attr("class", "container-recipe-movie")
+  storedRecipeContainer.attr("class", "container-recipe-movie");
   var storedRecipeTitle = $("<div></div>").html(values.recipeTitle);
   storedRecipeContainer.append(storedRecipeTitle);
   var storedRecipeUrl = $("<a></a>");
@@ -214,12 +218,15 @@ function populateStoredValues(values) {
   recipeNMovieContainer.append(storedRecipeContainer);
 
   var storedMovieContainer = $("<div></div>");
-  storedMovieContainer.attr("class", "container-recipe-movie")
+  storedMovieContainer.attr("class", "container-recipe-movie");
   var storedMovieTitle = $("<div></div>").html(values.movieTitle);
   storedMovieContainer.append(storedMovieTitle);
   var storedMoviePoster = $("<img></img>");
   storedMoviePoster.attr("src", values.moviePoster);
-  storedMoviePoster.attr("style", "width: 300px; height: 400px; border: 10px solid white")
+  storedMoviePoster.attr(
+    "style",
+    "width: 300px; height: 400px; border: 10px solid white"
+  );
   storedMovieContainer.append(storedMoviePoster);
   recipeNMovieContainer.append(storedMovieContainer);
 }
@@ -232,5 +239,4 @@ $("#clear-local-storage").click(function () {
   favoriteBtn.removeClass("red darken-4");
   localStorage.clear();
   checkLocalStorage();
-})
-
+});
