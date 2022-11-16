@@ -34,19 +34,31 @@ function formSubmit(event) {
 }
 
 function randomInputs(event) {
-  var movieGenre = "action&animation&biography&comedy&crime&documentary&drama&fantasy&horror&musical&romance&sci-fi&thriller".split("&")
-  var foodInput = "chicken&steak&salad&pasta&fish&seafood&beef&lamb&veal&pork&eggs&tacos&pizza".split("&")
+  var movieGenre =
+    "action&animation&biography&comedy&crime&documentary&drama&fantasy&horror&musical&romance&sci-fi&thriller".split(
+      "&"
+    );
+  var foodInput =
+    "chicken&steak&salad&pasta&fish&seafood&beef&lamb&veal&pork&eggs&tacos&pizza".split(
+      "&"
+    );
   event.preventDefault();
   var queryUrl =
-    "./results.html?q=" + foodInput[Math.floor(Math.random()*foodInput.length)] + "&movie=" + movieGenre[Math.floor(Math.random()*movieGenre.length)];
+    "./results.html?q=" +
+    foodInput[Math.floor(Math.random() * foodInput.length)] +
+    "&movie=" +
+    movieGenre[Math.floor(Math.random() * movieGenre.length)];
   location.assign(queryUrl);
 }
 
 submitBtn.click(formSubmit);
 randomBtn.click(randomInputs);
 
-$(function() {
-  $('#recipe-input, #movie-input').on('keyup change',function() {
-    $('#submit-btn').prop('disabled', ($('#recipe-input').val() == '' || $('#movie-input').val() == ''));
+$(function () {
+  $("#recipe-input, #movie-input").on("keyup change", function () {
+    $("#submit-btn").prop(
+      "disabled",
+      $("#recipe-input").val() == "" || $("#movie-input").val() == ""
+    );
   });
-})
+});
