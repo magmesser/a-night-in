@@ -70,7 +70,7 @@
     width: 49vw;
     height: 100vh;
     display: flex;
-    justify-content: center;   
+    justify-content: center;
 }
 
 #poster {
@@ -121,7 +121,7 @@ img {
 
 #dont-like-movie {
     margin-top: 40px;
-    
+
 }
 
 #restart-modal {
@@ -203,5 +203,55 @@ html {
 
     to {
         transform: translateY(-2000px);
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    html {
+        overflow: scroll
+    }
+
+    #header {
+        font-size: 33px;
+        position: relative;
+        right: 50px
+    }
+
+    .h3 {
+        width: 100vw;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    .right {
+        position: relative;
+        top: 200px;
+        width: 50vh;
+        float: right;
+    }
+
+    .left {
+        position: relative;
+        top: 100px;
+        width: 50vh;
+        float: right;
+    }
+
+    #view-favorite-btn {
+        position: relative;
+        margin: 0px;
+    }
+    #restart-modal {
+       position: relative;
+       margin: 0px;
+    }
+    #favorite-btn {
+        position: relative;
+        margin: 0px;
     }
 }
