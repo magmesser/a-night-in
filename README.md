@@ -63,3 +63,5 @@ https://magmesser.github.io/a-night-in/
 
 Click the link below to access to application repository on GitHub.
 https://github.com/magmesser/a-night-in 
+
+Project presentation: https://docs.google.com/presentation/d/10hfp8zhbi2x7eocy5wdwnV0y1bPAPMVHseBMo1RN6Y0/edit#slide=id.g320332ed93_1_0 

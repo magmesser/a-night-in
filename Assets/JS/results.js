@@ -124,6 +124,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+$(function () {
+  $("#recipe-input, #movie-input").on("keyup change", function () {
+    $("#submit-btn").prop(
+      "disabled",
+      $("#recipe-input").val() == "" || $("#movie-input").val() == ""
+    );
+  });
+});
+
 function formSubmit(event) {
   event.preventDefault();
   var queryUrl =
@@ -227,4 +236,13 @@ $("#clear-local-storage").click(function () {
   favoriteBtn.removeClass("red darken-4");
   localStorage.clear();
   checkLocalStorage();
+});
+
+$(function () {
+  $("#recipe-input, #movie-input").on("keyup change", function () {
+    $("#submit-btn").prop(
+      "disabled",
+      $("#recipe-input").val() == "" || $("#movie-input").val() == ""
+    );
+  });
 });
