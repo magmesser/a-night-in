@@ -39,7 +39,6 @@
     width: 25%;
 }
 
-
 #local-storage-recipe {
     width: 50%;
 }
@@ -108,6 +107,8 @@ h3 {
 
 #ingredients-list {
     list-style: square;
+    height: 225px;
+    overflow: auto;
 }
 
 img {
@@ -129,8 +130,9 @@ img {
 }
 
 html {
-    height: 130%;
+    height: 100vh;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
 }
 
 #plot {
