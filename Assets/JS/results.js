@@ -1,5 +1,5 @@
-// var movieApiKey = "k_ctt698mf";
-var movieApiKey = "k_8sbsu5mx";
+var movieApiKey = "k_ctt698mf";
+// var movieApiKey = "k_8sbsu5mx";
 var recipeTitle = $("#recipe-title");
 var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
@@ -25,6 +25,7 @@ function grabParams() {
   getMovies(movie);
 }
 
+// movie API
 var getMovies = function (movieGenre) {
   var movieApiUrl =
     "https://imdb-api.com/en/API/AdvancedSearch/" +
@@ -44,7 +45,7 @@ var getMovies = function (movieGenre) {
       displayMovieSearch(data);
     });
 };
-
+// receipt API
 function recipeAPI(recipe) {
   var recipeQueryUrl =
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
@@ -58,7 +59,7 @@ function recipeAPI(recipe) {
       updateRecipeCard(data);
     });
 }
-
+// display recipe 
 function updateRecipeCard(values) {
   var randomRecipe = values.hits[Math.floor(Math.random() * values.hits.length)].recipe;
   var ingredients = randomRecipe.ingredientLines;
@@ -70,7 +71,7 @@ function updateRecipeCard(values) {
     ingredientsList.append(listIngredient);
   }
 }
-
+// display movie 
 function displayMovieSearch(movieData) {
   var randomMovie = movieData.results[Math.floor(Math.random() * movieData.results.length)];
   $("#title").text(randomMovie.title);
@@ -81,6 +82,7 @@ function displayMovieSearch(movieData) {
 
 grabParams();
 
+// i don't like it buttons
 dontLikeRecipe.click(function () {
   var apiParamsArr = document.location.search.split("&");
   var recipe = apiParamsArr[0].split("=").pop();
@@ -100,7 +102,6 @@ dontLikeMovie.click(function () {
 });
 
 // copy of Modal from home page
-
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
   M.Modal.init(elems);
@@ -124,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// disable apply button until inputs completed
 $(function () {
   $("#recipe-input, #movie-input").on("keyup change", function () {
     $("#submit-btn").prop(
@@ -141,6 +143,7 @@ function formSubmit(event) {
   grabParams();
 }
 
+// randomizer
 function randomInputs(event) {
   var movieGenre =
     "action&animation&biography&comedy&crime&documentary&drama&fantasy&horror&musical&romance&sci-fi&thriller".split(
@@ -159,6 +162,7 @@ function randomInputs(event) {
   location.assign(queryUrl);
 }
 
+// local storage
 function populateLocalStorage() {
   var localStorageValue = localStorage.getItem("favorites");
   var recipeNMovie = {
