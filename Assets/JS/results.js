@@ -1,5 +1,5 @@
-var movieApiKey = "k_ctt698mf";
-// var movieApiKey = "k_8sbsu5mx";
+// var movieApiKey = "k_ctt698mf";
+var movieApiKey = "k_8sbsu5mx";
 var recipeTitle = $("#recipe-title");
 var recipeImg = $("#recipe-img");
 var recipeUrl = $("#recipe-url");
@@ -60,8 +60,7 @@ function recipeAPI(recipe) {
 }
 
 function updateRecipeCard(values) {
-  var randomRecipe =
-    values.hits[Math.floor(Math.random() * values.hits.length)].recipe;
+  var randomRecipe = values.hits[Math.floor(Math.random() * values.hits.length)].recipe;
   var ingredients = randomRecipe.ingredientLines;
   recipeTitle.html(randomRecipe.label);
   recipeImg.attr("src", randomRecipe.image);
@@ -73,9 +72,7 @@ function updateRecipeCard(values) {
 }
 
 function displayMovieSearch(movieData) {
-  var randomMovie =
-    movieData.results[Math.floor(Math.random() * movieData.results.length)];
-
+  var randomMovie = movieData.results[Math.floor(Math.random() * movieData.results.length)];
   $("#title").text(randomMovie.title);
   $("#poster").attr("src", randomMovie.image);
   $("#rating").text("Rated: " + randomMovie.contentRating);
@@ -164,12 +161,7 @@ function populateLocalStorage() {
   };
   if (localStorageValue) {
     var parsedValue = JSON.parse(localStorageValue);
-    debugger;
-    var value = parsedValue.find(
-      (e) =>
-        e.recipeTitle == recipeNMovie.recipeTitle &&
-        e.movieTitle == recipeNMovie.movieTitle
-    );
+    var value = parsedValue.find((e) => e.recipeTitle == recipeNMovie.recipeTitle && e.movieTitle == recipeNMovie.movieTitle);
     var index = parsedValue.indexOf(value);
     if (index > -1) {
       favoriteBtn.removeClass("red darken-4");
@@ -216,17 +208,13 @@ function populateStoredValues(values) {
   storedRecipeUrl.append(storedRecipeImg);
   storedRecipeContainer.append(storedRecipeUrl);
   recipeNMovieContainer.append(storedRecipeContainer);
-
   var storedMovieContainer = $("<div></div>");
   storedMovieContainer.attr("class", "container-recipe-movie");
   var storedMovieTitle = $("<div></div>").html(values.movieTitle);
   storedMovieContainer.append(storedMovieTitle);
   var storedMoviePoster = $("<img></img>");
   storedMoviePoster.attr("src", values.moviePoster);
-  storedMoviePoster.attr(
-    "style",
-    "width: 300px; height: 400px; border: 10px solid white"
-  );
+  storedMoviePoster.attr("style", "width: 300px; height: 400px; border: 10px solid white");
   storedMovieContainer.append(storedMoviePoster);
   recipeNMovieContainer.append(storedMovieContainer);
 }
