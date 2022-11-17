@@ -9,10 +9,6 @@
   padding-bottom: 20px;
 }
 
-.scroll {
-  overflow: auto;
-}
-
 /* Control the left side */
 .left {
   left: 0;
@@ -132,5 +128,29 @@ html {
 
   to {
     transform: translateY(-2000px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    display: none;
+  }
+  .split{
+    width: 100vw;
+    padding-top: 0px;
+    position: static;
+  }
+  p {
+    text-align: center;
+    font-size: 16px;
+    padding: 0px
+  }
+  h1 {
+    text-align: center;
+    margin-left: 0px;
+  }
+  .modal-trigger {
+    position: relative;
+    right: -80px;
   }
 }

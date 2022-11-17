@@ -29,9 +29,11 @@
                     class="material-icons center">favorite_border</i></a>
         </div>
         <div class="container">
+            <div class="favourite-img">
             <!-- View Local Storage -->
-            <a class="waves-effect waves-light btn modal-trigger" id="view-favorite-btn" href="#modal2">View
-                Favorites</a>
+            <a class="waves-effect waves-light btn modal-trigger" id="view-favorite-btn" href="#modal2"><i class="material-icons center">star_border</i></a>
+        </div>
+        </div>
         </div>
         <!-- Local Storage Modal Structure -->
         <div id="modal2" class="modal">
@@ -47,7 +49,7 @@
                 <a id="recipe-url" target="_blank"><img id="recipe-img"></a>
                 <ul>
                     <li>
-                        <div id="ingredients-list">
+                        <div id="ingredients-list" class="scroll">
                             <h5 style="text-decoration: underline;">Ingredients List</h5>
                         </div>
                     </li>
@@ -92,7 +94,7 @@
 
                     <div class="input-field col s12">
                         <select id="movie-input">
-                            <option value="" disabled selected>Choose your genre</option>
+                            <option value="" selected="selected">Choose your genre</option>
                             <option value="Action">Action</option>
                             <option value="Animation">Animation</option>
                             <option value="Biography">Biography</option>
@@ -118,7 +120,7 @@
                     name="action">Choose For Me!
                     <i class="material-icons" style="font-size: 13px">send</i>
                 </button>
-                <button id="submit-btn" class="btn waves-effect waves-light text-center" type="submit"
+                <button id="submit-btn" class="btn waves-effect waves-light text-center" type="submit" disabled="disabled"
                     name="action">Apply
                     <i class="material-icons" style="font-size: 13px">send</i>
                 </button>
