@@ -237,3 +237,12 @@ $("#clear-local-storage").click(function () {
   localStorage.clear();
   checkLocalStorage();
 });
+
+$(function () {
+  $("#recipe-input, #movie-input").on("keyup change", function () {
+    $("#submit-btn").prop(
+      "disabled",
+      $("#recipe-input").val() == "" || $("#movie-input").val() == ""
+    );
+  });
+});
