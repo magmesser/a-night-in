@@ -12,8 +12,8 @@
 
 Wireframe Screenshots
 
-![Wireframe Screenshot 1](./Photos/image1.png)
+![Wireframe Screenshot 1](./Photos/wireframe/image1.png)
 
-![Wireframe Screenshot 1](./Photos/image2.png)
+![Wireframe Screenshot 1](./Photos/wireframe/image2.png)
 
-![Wireframe Screenshot 1](./Photos/image3.png)
+![Wireframe Screenshot 1](./Photos/wireframe/image3.png)

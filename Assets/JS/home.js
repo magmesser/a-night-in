@@ -3,6 +3,7 @@ var movieInput = $("#movie-input");
 var submitBtn = $("#submit-btn");
 var randomBtn = $("#random-btn");
 
+// modal
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
   M.Modal.init(elems);
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// submit
 function formSubmit(event) {
   event.preventDefault();
   var queryUrl =
@@ -33,6 +35,7 @@ function formSubmit(event) {
   location.assign(queryUrl);
 }
 
+// randomizer 
 function randomInputs(event) {
   var movieGenre =
     "action&animation&biography&comedy&crime&documentary&drama&fantasy&horror&musical&romance&sci-fi&thriller".split(
@@ -54,6 +57,7 @@ function randomInputs(event) {
 submitBtn.click(formSubmit);
 randomBtn.click(randomInputs);
 
+// disable apply button until inputs complete
 $(function () {
   $("#recipe-input, #movie-input").on("keyup change", function () {
     $("#submit-btn").prop(

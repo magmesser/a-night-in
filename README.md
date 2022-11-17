@@ -13,20 +13,27 @@ For our group project we wanted to provide an application that would assist in c
 ---
 ## Usage
 
-1. Read through the introduction page and click GET STARTED button.
+1. Read through the introduction page and click GET STARTED button. 
+![screenshot 1 - home page](./Assets/Photos/screenshots/ss1_home.jpg)
 2. Type in a meal keyword. This can be dietary (ex. vegan), ingredient (ex. chicken), regional (ex. Italian), or meal (ex. pasta).
 3. Select a movie genre from the drop down list.
+![screenshot 2 - get started button](./Assets/Photos/screenshots/ss2_getstarted.jpg)
 4. Click APPLY button. OR click CHOOSE FOR ME! button for application to choose meal keyword and movie genre. 
+![screenshot 3 - apply button](./Assets/Photos/screenshots/ss3_apply.jpg)
 5. Review suggestions provided by application. 
 6. If you **like one** of the options but **dislike** the other: (ex. like meal but dislike movie) then click the I DON'T LIKE IT button for the option you wish to change. 
+![screenshot 4 - don't like it buton](./Assets/Photos/screenshots/ss4_changeoption.jpg)
+![screenshot 5 - new option presented](./Assets/Photos/screenshots/ss5_newoption.jpg)
 7. If you **like both** options: you are all set. Click the meal photo to open the full recipe in a new tab.
 8. If you **dislike both** options: click the RESTART ICON button to bring up the selection modal again.
+![screenshot 8 - restart button](./Assets/Photos/screenshots/ss8_restart.jpg)
+![screenshot 9 - choose for me button](./Assets/Photos/screenshots/ss9_chooseforme.jpg)
+![screenshot 10 - new options presented](./Assets/Photos/screenshots/ss10_newoptions.jpg)
 9. If you would like to **save** your options: click the RED HEART ICON button to save to your favorites. Click the VIEW FAVORITES button to view all saved options. Click the CLEAR FAVORITES button to clear all favorites.
+![screenshot 6 - save options to favorites button](./Assets/Photos/screenshots/ss6_savetofav.jpg)
+![screenshot 7 - view favorites button](./Assets/Photos/screenshots/ss7_viewfavs.jpg)
 
 
-Include screenshots as needed.
-
-    ![alt text](assets/images/screenshot.png)
 ---
 ## Credits - Group 9
 
