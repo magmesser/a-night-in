@@ -43,7 +43,7 @@ Languages:
 - JavaScript
 
 Third-Party APIs:
-- jQeury
+- jQuery
 - Materialize CSS
 - Google Fonts
 - Google Font Icons
@@ -55,7 +55,10 @@ Server-Side APIs:
 
 ## Future Development
 
-For future development, we would like to like the movie poster result to a streaming service, so the user can click to start watching from the application results screen. 
+- We would like to link the movie poster result to a streaming service, so the user can click to start watching from the application results screen.
+- We would like to add the option to view favorites to the home page, so the user can view favorited combinations on page load. 
+- We would like to improve the UX/UI design.
+
 
 ## Links
 Click the link below to access the deployed site on GitHub Pages.
